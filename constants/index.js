@@ -1,0 +1,1 @@
+export const heroAnnouncement ='HikeVault v1.0.0 is live! 🎉'

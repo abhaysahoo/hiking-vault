@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Six+Caps&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f7fee7;
+    --foreground: #262626;
+    --card: #f7fee7;
+    --card-foreground: #262626;
+    --popover: #f7fee7;
+    --popover-foreground: #262626;
+    --primary: #65a30d;
+    --primary-foreground: #ffffff;
+    --primary-hover: #4d7c0f;
+    --primary-loading: #a3e635;
+    --secondary: #f5f5f5;
+    --secondary-foreground: #171717;
+    --secondary-hover: #e5e5e5;
+    --secondary-loading: #f5f5f5;
+    --secondary-loading-foreground: #525252;
+    --disabled: #f5f5f5;
+    --disabled-foreground: #a3a3a3;
+    --muted: #d4d4d4;
+    --muted-foreground: #a3e635;
+    --accent: #ecfccb;
+    --accent-foreground: #171717;
+    --destructive: #dc2626;
+    --destructive-foreground: #ffffff;
+    --destructive-hover: #b91c1c;
+    --destructive-loading: #f87171;
+    --border: #65a30d;
+    --input: #65a30d;
+    --ring: #65a30d;
+
+    --brand-50: #f7fee7;
+    --brand-100: #ecfccb;
+    --brand-200: #d9f99d;
+    --brand-300: #bef264;
+    --brand-400: #a3e635;
+    --brand-500: #84cc16;
+    --brand-600: #65a30d;
+    --brand-700: #4d7c0f;
+    --brand-800: #3f6212;
+    --brand-900: #365314;
+    --brand-950: #1a2e05;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins m-0 p-0 box-border scroll-smooth;
+  }
+}
+
+@layer components {}
+
+@layer utilities {
+  .wrapper {
+    @apply w-full max-w-6xl mx-auto px-4 sm:px-8 py-4;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-end {
+    @apply flex items-center justify-end;
+  }
+
+  .flex-start {
+    @apply flex items-center justify-start;
+  }
+
+  .flex-around {
+    @apply flex items-center justify-around;
+  }
+
+  .flex-stretch {
+    @apply flex items-center justify-stretch;
+  }
+
+  .absolute-center {
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+}
