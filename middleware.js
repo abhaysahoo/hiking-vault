@@ -1,6 +1,15 @@
 import { withAuth } from "next-auth/middleware";
+import { customMiddleware } from "./middlewares/customMiddleware";
+import { NextResponse } from "next/server";
 
-export default withAuth({
+export default withAuth(
+    async (req) => {
+        const customResponse = await customMiddleware(req);
+        if(customResponse) return customResponse;
+
+        return NextResponse.next();
+    }, 
+    {
     pages: {
         signIn: "/auth/sign-in",
     },

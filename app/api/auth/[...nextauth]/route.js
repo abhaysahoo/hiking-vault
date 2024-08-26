@@ -28,6 +28,8 @@ export const authOptions = {
                 // If the user exists, attach the MongoDB _id to the token
                 if (existingUser) {
                     token.id = existingUser._id;
+                    token.role = existingUser.role;
+                    token.businessId = existingUser.businessId;
                 } else {
                     // Handle the case where the user is being created (if needed)
                     // You might create the user here or just let it happen elsewhere
@@ -39,6 +41,8 @@ export const authOptions = {
 
         async session({ session, token }) {
             // Attach the MongoDB _id to session.user.id
+            session.user.role = token.role;
+            session.user.businessId = token.businessId;
             session.user.id = token.id;
             return session;
         },

@@ -51,9 +51,28 @@
   body {
     @apply bg-background text-foreground font-poppins m-0 p-0 box-border scroll-smooth;
   }
+
+  h3 {
+    @apply text-3xl font-semibold;
+  }
+
+
+
 }
 
-@layer components {}
+@layer components {
+  .phone_input {
+    @apply border border-neutral-300 rounded-lg text-sm text-neutral-400 shadow-sm focus:outline-none;
+    width: 100% !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .phone_container {
+    @apply rounded-lg;
+  }
+
+}
 
 @layer utilities {
   .wrapper {
@@ -88,4 +107,34 @@
     @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
 
+  .form_input {
+    @apply w-full flex rounded-lg p-3 text-sm text-neutral-400 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary;
+  }
+
+  .form {
+    @apply flex items-start flex-col gap-2 max-w-sm p-2 w-full;
+  }
+
+  .label {
+    @apply text-base text-neutral-500;
+  }
+
+  .loader {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: spin 1s ease infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
