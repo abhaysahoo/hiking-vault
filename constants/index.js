@@ -1,4 +1,4 @@
-export const heroAnnouncement ='HikeVault v1.0.0 is live! 🎉';
+export const heroAnnouncement ='HikingVault v1.0.0 is live! 🎉';
 
 export const navMenu = [
     {

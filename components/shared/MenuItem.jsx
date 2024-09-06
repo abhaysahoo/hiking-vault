@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -11,7 +13,8 @@ const MenuItem = ({ menuItem, isCollapsed }) => {
   return (
     <Link href={menuItem.path}>
       <div className={`w-full flex ${isCollapsed? 'flex-center' : ''} gap-4 p-2 rounded-xl text-neutral-500 hover:bg-accent
-          ${isActive ? 'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground' : ''}`}>
+          ${isActive ? 'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground' : ''}`}
+      >
             <Image 
                 src={isActive? menuItem.activeIcon : menuItem.inactiveIcon}
                 alt={menuItem.name}

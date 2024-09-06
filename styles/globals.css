@@ -23,8 +23,8 @@
     --secondary-loading-foreground: #525252;
     --disabled: #f5f5f5;
     --disabled-foreground: #a3a3a3;
-    --muted: #d4d4d4;
-    --muted-foreground: #a3e635;
+    --muted: #e5e5e5;
+    --muted-foreground: #a3a3a3;
     --accent: #ecfccb;
     --accent-foreground: #171717;
     --destructive: #dc2626;
@@ -49,14 +49,28 @@
   }
 
   body {
-    @apply bg-background text-foreground font-poppins m-0 p-0 box-border scroll-smooth;
+    @apply bg-brand-100 text-foreground font-poppins m-0 p-0 box-border scroll-smooth;
+  }
+
+  h1 {
+    @apply text-5xl font-semibold;
+  }
+
+  h2 {
+    @apply text-4xl font-semibold;
   }
 
   h3 {
     @apply text-3xl font-semibold;
   }
 
+  h4 {
+    @apply text-2xl font-semibold;
+  }
 
+  h5 {
+    @apply text-xl font-semibold;
+  }
 
 }
 
@@ -71,7 +85,7 @@
   .phone_container {
     @apply rounded-lg;
   }
-
+  
 }
 
 @layer utilities {
@@ -111,8 +125,12 @@
     @apply w-full flex rounded-lg p-3 text-sm text-neutral-400 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary;
   }
 
+  .form_input_label_wrapper {
+    @apply flex flex-col w-full gap-2;
+  }
+
   .form {
-    @apply flex items-start flex-col gap-2 max-w-sm p-2 w-full;
+    @apply flex items-start flex-col gap-4 max-w-sm p-2 w-full;
   }
 
   .label {

@@ -7,8 +7,8 @@ import User from "@/lib/db/models/user.model";
 export const authOptions = {
     providers: [
         Google({
-            clientId: process.env.GOOGLE_ID,
-            clientSecret: process.env.GOOGLE_SECRET,
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET
         })
     ],
     pages: {
