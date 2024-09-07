@@ -1,8 +1,6 @@
 "use client"
 
-// import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
-
 
 export const columns = [
     {
@@ -10,7 +8,9 @@ export const columns = [
         header: "Image",
         cell: ({ row }) => {
             const imageKey = row.getValue("image");
-            const publicImageUrl = `https://${process.env.NEXT_PUBLIC_AWS_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/${imageKey}`.trim();
+            const publicImageUrl = imageKey ?
+             `https://${process.env.NEXT_PUBLIC_AWS_BUCKET_NAME}.s3.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/${imageKey}`.trim()
+             : '/images/placeholder-image.jpg';
 
             return (
                 <Image 
@@ -18,7 +18,7 @@ export const columns = [
                     alt={`equipment-image-${imageKey}`}
                     width={40}
                     height={40}
-                    className="object-contain w-auto h-auto"
+                    className="object-contain w-auto h-auto rounded-md shadow-sm"
                 />
             )
         }
@@ -38,5 +38,5 @@ export const columns = [
     {
         accessorKey: "category",
         header: "Category",
-    },  
+    },
 ]

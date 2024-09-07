@@ -8,33 +8,10 @@ import {
   TabsList, 
   TabsTrigger 
 } from "@/components/ui/tabs"
-import DataTable from '@/components/shared/DataTable';
-import { columns } from './columns';
-import { useState, useEffect } from 'react';
+import EquipmentTable from '@/components/shared/EquipmentTable';
 
 const page = () => {
   const pathName = usePathname();
-  const [equipments, setEquipments] = useState([]);
-
-  useEffect(() => {
-    const fetchEquipments = async () => {
-      try {
-        const response = await fetch('/api/equipment');
-        const body = await response.json();
-
-        if(response.ok) {
-          console.log('Equipments fetched succesfully'); 
-          setEquipments(body.allEquipments);
-        } else {
-          throw new Error(body.message);
-        }
-      } catch(error) {
-        console.error(error.message);
-      }
-    }
-
-    fetchEquipments();
-  }, [])
 
   return (
     <div className='lg:w-full bg-background m-4 rounded-lg p-2 sm:p-4'>
@@ -51,7 +28,7 @@ const page = () => {
               <TabsTrigger value="add">Add an Equipment</TabsTrigger>
             </TabsList>
             <TabsContent value="list">
-              <DataTable columns={columns} data={equipments} />
+              <EquipmentTable />
             </TabsContent>
             <TabsContent value="add">
               <EquipmentForm />
