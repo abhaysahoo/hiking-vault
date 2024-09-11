@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from 'next/navigation'
 import EquipmentForm from '@/components/shared/EquipmentForm';
 import { 
   Tabs, 
@@ -11,14 +10,13 @@ import {
 import EquipmentTable from '@/components/shared/EquipmentTable';
 
 const page = () => {
-  const pathName = usePathname();
 
   return (
     <div className='lg:w-full bg-background m-4 rounded-lg p-2 sm:p-4'>
       <div className='flex-start flex-col gap-12'>
         <div className='flex items-center justify-between self-stretch'>
           <h4 className='text-neutral-600'>
-            {pathName.slice(1).toUpperCase()}
+            Equipments
           </h4>  
         </div>
         <div className='w-full'>

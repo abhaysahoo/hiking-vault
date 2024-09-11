@@ -1,9 +1,16 @@
-import React from 'react'
+"use client";
+
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 const page = () => {
-  return (
-    <div className='lg:w-full bg-background m-4 rounded-lg p-2 sm:p-4'>people</div>
-  )
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/people/invite');
+  }, [router])
+
+  return null;
 }
 
 export default page

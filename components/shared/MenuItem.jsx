@@ -8,7 +8,7 @@ import React from 'react'
 const MenuItem = ({ menuItem, isCollapsed }) => {
   const pathName = usePathname();
 
-  const isActive = pathName === menuItem.path;
+  const isActive = pathName.includes(menuItem.path);
 
   return (
     <Link href={menuItem.path}>

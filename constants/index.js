@@ -26,3 +26,20 @@ export const navMenu = [
         activeIcon: '/icons/users-active.svg',
     },
 ]
+
+export const peopleMenu = [
+    {
+        name: 'Invite A Guide',
+        path: '/people/invite',
+        inactiveIcon: '/icons/envelope-inactive.svg',
+        activeIcon: '/icons/envelope-active.svg',
+    },
+    {
+        name: 'All Members',
+        path: '/people/members',
+        inactiveIcon: '/icons/list-bullet-inactive.svg',
+        activeIcon: '/icons/list-bullet-active.svg',
+    }
+]
+
+export const emailInvitationDisplayMessage = 'Send an invitation link using email. The link will be valid for 24 hours';
