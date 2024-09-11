@@ -8,6 +8,7 @@ import {
   TabsTrigger 
 } from "@/components/ui/tabs"
 import EquipmentTable from '@/components/shared/EquipmentTable';
+import { Suspense } from 'react';
 
 const page = () => {
 
@@ -26,7 +27,9 @@ const page = () => {
               <TabsTrigger value="add">Add an Equipment</TabsTrigger>
             </TabsList>
             <TabsContent value="list">
-              <EquipmentTable />
+              <Suspense>
+                <EquipmentTable />
+              </Suspense>
             </TabsContent>
             <TabsContent value="add">
               <EquipmentForm />
